@@ -23,7 +23,8 @@ function getTotalX(a, b) {
   var output = 0;
   for (let i = Math.min(...a); i <= Math.max(...b); i += Math.min(...a)) {
     b.array.forEach(element => {
-      a.
+      a.forEach((x => 
+        ))
       
     });
   }
