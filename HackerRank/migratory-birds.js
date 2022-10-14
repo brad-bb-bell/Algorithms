@@ -18,8 +18,23 @@
 //   }
 //   return birdType;
 // }
+
+// arr = arr.sort((a, b) => a - b);
+
 function migratoryBirds(arr) {
   var values = [0, 0, 0, 0, 0];
-  arr = arr.sort((a, b) => a - b);
+  var bird = 1;
+  var sightings = 0;
+  for (let index = 1; index < 6; index++) {
+    var num = arr.filter((x) => x === index);
+    values[index - 1] = num.length;
+  }
+  for (let index = 1; index < 6; index++) {
+    if (values[values.length - index] > sightings) {
+      sightings = values[values.length - index];
+      bird = values.indexOf(sightings) + 1;
+    }
+  }
+  return bird;
 }
 console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
